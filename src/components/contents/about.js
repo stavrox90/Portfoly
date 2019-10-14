@@ -20,7 +20,7 @@ function About() {
                     <p>
                         I've worked in my previous field as Quantity Surveyor for 5 years
                         for local Consultant Firm, Contractors and Landscape Architect..
-                        and started qestioning my own passions and current jobscopes.
+                        and started questioning my own passions and current jobscopes.
                     </p>
                     <p>
                         My coding journey started around 2017, when I tried coding using HTML,
