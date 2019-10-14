@@ -9,7 +9,7 @@ const useStyles = makeStyles({
         margin: "10px 0 10px 0",
     },
     media: {
-        height: "90vw",
+        height: "60vw",
     },
     container: {
         width: "100%",

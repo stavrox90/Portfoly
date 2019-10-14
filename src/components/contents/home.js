@@ -8,9 +8,9 @@ import { Container, Row, Col, Image, Jumbotron, Button } from "react-bootstrap";
 const useStyles = makeStyles({
     avatar: {
         margin: 10,
-        width: "30%",
+        width: "20vh",
         height: "auto",
-        boxShadow: "0 0 0 5px blue",
+        boxShadow: "0 0 0 5px #007cfe",
         border: "5px inset white",
     },
 })
