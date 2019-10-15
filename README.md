@@ -1,3 +1,8 @@
+## Portfoly
+
+My personal online portfolio inspired by qwerqy's portfolio (https://github.com/qwerqy/budu). Check him up! Budu for life! XD
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
