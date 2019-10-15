@@ -1,12 +1,9 @@
-import React from 'react'
-import avatar from '../images/avatar.jpg'
-import { tools } from './details'
-import { Grid, Box, Paper, CardHeader } from '@material-ui/core';
+import React from 'react';
+import { tools } from './details';
+import { Grid } from '@material-ui/core';
 import { Jumbotron, Container, Row, Col, Card } from "react-bootstrap";
 
 function About() {
-
-
     return (
         <div>
             <Jumbotron>
@@ -60,4 +57,4 @@ function About() {
     )
 }
 
-export default About
+export default About;

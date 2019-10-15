@@ -9,7 +9,7 @@ const useStyles = makeStyles({
         justifyContent: "space-evenly",
     },
     card: {
-        maxWidth: "auto",
+        // maxWidth: "auto",
         margin: "10px 0 10px 0",
     },
     media: {
@@ -23,7 +23,7 @@ function About() {
 
     return (
         <div>
-            <Grid container spacing={2} className={classes.root}>
+            <Grid container className={classes.root}>
                 {works.map(works => {
                     return (
                         <div>
@@ -44,6 +44,7 @@ function About() {
                                 <CardContent>
                                     <Typography variant="body2" color="textSecondary" component="p">
                                         <span>{works.description}</span>
+                                        <br />
                                         <span>{works.source}</span>
                                     </Typography>
                                 </CardContent>

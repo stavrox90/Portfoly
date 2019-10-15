@@ -1,5 +1,5 @@
 import React, { useState, useRef } from "react";
-import { makeStyles, AppBar, Tabs, Tab, Box, Grid, Paper } from '@material-ui/core';
+import { Box } from '@material-ui/core';
 import { Button, Overlay, Popover } from "react-bootstrap";
 
 function Bamboozle() {

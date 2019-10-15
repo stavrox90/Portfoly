@@ -3,11 +3,11 @@ import { Bamboozle } from '../layout'
 import avatar from '../images/avatar.jpg'
 import { makeStyles } from '@material-ui/core/styles';
 import { Grid, Avatar } from '@material-ui/core';
-import { Container, Row, Col, Image, Jumbotron, Button } from "react-bootstrap";
+import { Container, Row, Col, Jumbotron } from "react-bootstrap";
 
 const useStyles = makeStyles({
     avatar: {
-        margin: 10,
+        margin: "auto",
         width: "20vh",
         height: "auto",
         boxShadow: "0 0 0 5px #007cfe",
