@@ -38,7 +38,7 @@ function Home() {
                     </Row>
                 </Container>
             </Jumbotron>
-            <Bamboozle />
+            {/* <Bamboozle /> */}
         </div>
     )
 }
