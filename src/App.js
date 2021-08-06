@@ -5,11 +5,12 @@ import { Navigation, Routes, Footer } from "./components/layout";
 function App() {
   return (
     <div className="full">
-      <Router>
+      hello
+      {/* <Router>
         <Navigation />
         <Routes />
         <Footer />
-      </Router>
+      </Router> */}
     </div>
   );
 }
