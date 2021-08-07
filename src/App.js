@@ -1,9 +1,11 @@
 import { Container, createTheme, ThemeProvider } from '@material-ui/core';
 import { purple, teal } from '@material-ui/core/colors';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, withRouter, Switch, Route } from "react-router-dom";
 import { Navigation, Routes, Footer } from "./components/layout";
-import MobileView from './layouts/mobileView'
+import Layout from './layouts/layout'
+
+import { Home, About, Projects, Contacts, Lost } from './components/contents';
 
 const theme = createTheme({
   // palette: {},
@@ -32,22 +34,38 @@ const theme = createTheme({
   }
 })
 
+{/*
+  fetch('http://localhost:8000/contacts', {
+    method: 'POST',
+    headers: {"Content-type": "application/json"},
+    body: JSON.stringify({ title, details, category })
+  })
+  .then(() => history.push('/'))
+*/}
+
 function App() {
+  // const [data, setData] = useState()
+
+  // useEffect(() => {
+  //   fetch('http://localhost:8000/contacts')
+  //   .then(res => res.json())
+  //   .then(data => setData(data))
+  // }, [])
+
   return (
     <ThemeProvider theme={theme}>
-      <MobileView />
+      <Layout>
+        <Router>
+          <Switch>
+              <Route exact path="/" component={Home} />
+              <Route path="/about" component={About} />
+              <Route path="/projects" component={Projects} />
+              <Route path="/contacts" component={Contacts} />
+              <Route to="*" component={Lost} />
+          </Switch>
+        </Router>
+      </Layout>
     </ThemeProvider>
-    // <Container>
-    //   <Router>
-    //     <Switch>
-    //         <Route exact path="/" component={MobileView} />
-    //         {/* <Route path="/about" component={About} />
-    //         <Route path="/projects" component={Projects} />
-    //         <Route path="/contacts" component={Contacts} />
-    //         <Route to="*" component={Lost} /> */}
-    //     </Switch>
-    //   </Router>
-    // </Container>
   );
 }
 

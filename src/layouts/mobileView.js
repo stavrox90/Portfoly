@@ -22,7 +22,10 @@ const useStyles = makeStyles(theme => {
         },
         avatar: {
             marginLeft: theme.spacing(2)
-        }
+        },
+        active: {
+            backgroundColor: theme.palette.secondary.light
+        },
     }
 })
 
@@ -47,41 +50,40 @@ const menus = [
     {
         label: 'Home',
         value: 'home',
+        path: '/',
         icon: <HomeRounded/>
     },
     {
         label: 'About',
         value: 'about',
+        path: '/about',
         icon: <PermIdentityRounded/>
     },
     {
         label: 'Projects',
         value: 'projects',
+        path: '/projects',
         icon: <ListAltRounded/>
     },
     {
         label: 'Contacts',
         value: 'contacts',
+        path: '/contacts',
         icon: <ContactsRounded/>
     }
 ]
 
 function RenderBottomBar() {
     const classes = useStyles()
-    // const history = useHistory()
-    // const location = useLocation()
+    const history = useHistory()
     const [value, setValue] = useState('home')
-
-    const handleChange = (e, newValue) => {
-        setValue(newValue)
-    }
 
     return (
         <>
             <AppBar position="fixed" className={classes.btmAppBar}>
                 <BottomNavigation
                     value={value}
-                    onChange={handleChange}
+                    // onChange={handleChange}
                     showLabels
                     // className={}
                 >
@@ -92,6 +94,8 @@ function RenderBottomBar() {
                         label={menu.label}
                         value={menu.value}
                         icon={menu.icon}
+                        onClick={() => history.push(menu.path)}
+                        // className={value == menu.value && classes.active || null}
                     />)
                 }
                 </BottomNavigation>
@@ -105,7 +109,6 @@ export default function MobileView({ children }) {
     <>
         <RenderTopBar/>
             {children}
-        <h1>Mobile View</h1>
         <RenderBottomBar/>
     </>
 )}
