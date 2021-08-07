@@ -2,20 +2,13 @@ import React, { useState, useEffect } from "react";
 import { Grid, Card, CardHeader, CardContent, Typography, IconButton } from "@material-ui/core";
 import { DeleteOutlined } from "@material-ui/icons";
 
-export default function NoteCard({ note }) {
-  const [notes, setNotes] = useState([])
-
-  useEffect(() => {
-    fetch('_iRvYX7_db.json', {
-      headers: {
-      'Content-Type': 'application/json',
-      'Accept': 'application/json'
-      }
-  })
-  }, [])
-
-  const handleDelete = async (id) => {
-    await fetch()
+export default function NoteCard(props) {
+  const { note, index, data, setData } = props
+  
+  const handleDelete = (id) => {
+    if (data.length > 0) {
+      setData(data.filter((card, index) => index !== id))
+    }
   }
 
   return (
@@ -23,7 +16,7 @@ export default function NoteCard({ note }) {
       <Card elevation={1}>
         <CardHeader
           action={
-            <IconButton onClick={() => console.log('delete')}>
+            <IconButton onClick={() => handleDelete(index)}>
               <DeleteOutlined />
             </IconButton>
           }

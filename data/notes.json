@@ -1,5 +1,5 @@
 {
-	"notes": [
+    "notes": [
 		{
 			"title": "Yoshi's birthday bash",
 			"details": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
@@ -17,43 +17,6 @@
 			"details": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
 			"category": "todos",
 			"id": 3
-		}
-	],
-	"contacts": [
-		{
-			"title": "Email",
-			"value": "inrafilus@gmail.com",
-			"url": "mailto:inrafilus@gmail.com",
-			"color": "#D44638",
-			"img": "gmail"
-		},
-		{
-        "title": "LinkedIn",
-        "value": "Filus Inra",
-        "url": "https://www.linkedin.com/in/inrafilus/",
-        "color": "#0077B5",
-        "img": "linkedin"
-		},
-		{
-        "title": "Twitter",
-        "value": "@nyxstvrx",
-        "url": "https://twitter.com/nyxstvrx",
-        "color": "#1DA1F2",
-        "img": "twitter"
-		},
-		{
-        "title": "Github",
-        "value": "stavrox90",
-        "url": "https://github.com/stavrox90",
-        "color": "#999999",
-        "img": "github"
-		},
-		{
-        "title": "Soundcloud",
-        "value": "Z'yev",
-        "url": "https://soundcloud.com/stvrx90",
-        "color": "#e87109",
-        "img": "soundcloud"
 		}
 	]
 }
