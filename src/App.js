@@ -1,5 +1,5 @@
 import { Container, createTheme, ThemeProvider } from "@material-ui/core";
-import { purple, teal } from "@material-ui/core/colors";
+import { blue, lightBlue, purple, teal } from "@material-ui/core/colors";
 import React, { useEffect, useState } from "react";
 import {
   BrowserRouter as Router,
@@ -15,7 +15,7 @@ import { Home, About, Projects, Contacts, Lost } from "./pages";
 const theme = createTheme({
   // palette: {},
   palette: {
-    primary: teal,
+    primary: blue,
     secondary: purple,
   },
   typography: {

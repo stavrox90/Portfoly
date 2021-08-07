@@ -37,7 +37,7 @@ function RenderTopBar() {
   const classes = useStyles();
   return (
     <>
-      <AppBar position="static">
+      <AppBar elevation={0} position="static">
         <Toolbar>
           <div className={classes.offset} />
           <Typography>Filus</Typography>
@@ -55,7 +55,7 @@ function RenderBottomBar() {
   
   return (
     <>
-      <AppBar position="fixed" className={classes.btmAppBar}>
+      <AppBar elevation={0} position="fixed" className={classes.btmAppBar}>
         <BottomNavigation
           value={value}
           onChange={(e, newValue) => setValue(newValue)}

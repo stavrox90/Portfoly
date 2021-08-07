@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import {
+  makeStyles,
   Container,
   Grid,
   Card,
@@ -34,9 +35,27 @@ const noteObj = [
   },
 ];
 
-// card container
+const useStyles = makeStyles((theme) => ({
+  root: {
+    width: "100%",
+    maxWidth: "80vw",
+    margin: "auto",
+    backgroundColor: theme.palette.background.paper,
+  },
+  button: {
+    "&:hover": {
+      // backgroundColor: "#fff",
+      color: theme.palette.warning.dark
+    }
+  }
+  // nested: {
+  //   paddingLeft: theme.spacing(4),
+  // },
+}));
+
 export default function NoteCard() {
   const [notes, setNotes] = useState(noteObj || []);
+  const classes = useStyles();
 
   const handleDelete = (id) => {
     if (notes.length > 0) {
@@ -44,16 +63,28 @@ export default function NoteCard() {
     }
   };
 
+  // TODO: undo delete feature
+  const undoDelete = () => {
+
+    // if (notes.length > 0) {
+    //   setNotes(notes.filter((card, index) => index !== id));
+    // }
+  }
+
   return (
     <>
-      <Container>
+    {/* <Container> */}
+      <Container className={classes.root}>
         <Grid container spacing={3}>
           {notes.map((note, id) => (
             <Grid item key={id} xs={12} sm={6} md={4}>
-              <Card elevation={1}>
+              <Card elevation={3}>
                 <CardHeader
                   action={
-                    <IconButton onClick={() => handleDelete(id)}>
+                    <IconButton 
+                      onClick={() => handleDelete(id)}
+                      className={classes.button}
+                    >
                       <DeleteOutlined />
                     </IconButton>
                   }

@@ -45,7 +45,7 @@ function RenderTopBar() {
     
     return (
       <>
-        <AppBar position="static">
+        <AppBar elevation={0} position="static">
             <Toolbar>
             <div className={classes.offset} />
             <Typography>Filus</Typography>
