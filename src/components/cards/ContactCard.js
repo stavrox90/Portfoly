@@ -64,8 +64,14 @@ const contactList = [
 const useStyles = makeStyles((theme) => ({
   root: {
     width: "100%",
-    maxWidth: 360,
+    [theme.breakpoints.down('sm')]: {
+      maxWidth: 360,
+    },
+    [theme.breakpoints.up('md')]: {
+      maxWidth: 600,
+    },
     margin: "auto",
+    marginTop: theme.spacing(1),
     backgroundColor: theme.palette.background.paper,
   },
 //   nested: {

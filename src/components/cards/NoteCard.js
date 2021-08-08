@@ -3,6 +3,7 @@ import {
   makeStyles,
   Container,
   Grid,
+  Paper,
   Card,
   CardHeader,
   CardContent,
@@ -38,19 +39,28 @@ const noteObj = [
 const useStyles = makeStyles((theme) => ({
   root: {
     width: "100%",
-    maxWidth: "80vw",
+    [theme.breakpoints.down("sm")]: {
+      maxWidth: 360,
+    },
+    [theme.breakpoints.up("md")]: {
+      maxWidth: 600,
+    },
     margin: "auto",
     backgroundColor: theme.palette.background.paper,
+  },
+  gridContainer: {
+    width: "100%",
+    margin: 0,
+  },
+  card: {
+    marginTop: theme.spacing(1)
   },
   button: {
     "&:hover": {
       // backgroundColor: "#fff",
-      color: theme.palette.warning.dark
-    }
-  }
-  // nested: {
-  //   paddingLeft: theme.spacing(4),
-  // },
+      color: theme.palette.warning.dark,
+    },
+  },
 }));
 
 export default function NoteCard() {
@@ -65,42 +75,42 @@ export default function NoteCard() {
 
   // TODO: undo delete feature
   const undoDelete = () => {
-
     // if (notes.length > 0) {
     //   setNotes(notes.filter((card, index) => index !== id));
     // }
-  }
+  };
 
   return (
     <>
-    {/* <Container> */}
-      <Container className={classes.root}>
-        <Grid container spacing={3}>
+      {/* <Container> */}
+      {/* <Container className={classes.root}> */}
+        <Grid className={classes.root}>
+          <Card className={classes.card}>
           {notes.map((note, id) => (
-            <Grid item key={id} xs={12} sm={6} md={4}>
-              <Card elevation={3}>
-                <CardHeader
-                  action={
-                    <IconButton 
-                      onClick={() => handleDelete(id)}
-                      className={classes.button}
-                    >
-                      <DeleteOutlined />
-                    </IconButton>
-                  }
-                  title={note.title}
-                  subheader={note.category}
-                />
-                <CardContent>
-                  <Typography variant="body2" color="textSecondary">
-                    {note.details}
-                  </Typography>
-                </CardContent>
-              </Card>
-            </Grid>
+            <>
+              <CardHeader
+                key={id}
+                action={
+                  <IconButton
+                    // onClick={() => handleDelete(id)}
+                    className={classes.button}
+                  >
+                    <DeleteOutlined />
+                  </IconButton>
+                }
+                title={note.title}
+                subheader={note.category}
+              />
+              <CardContent>
+                <Typography variant="body2" color="textSecondary" component="p">
+                  {note.details}
+                </Typography>
+              </CardContent>
+            </>
           ))}
+          </Card>
         </Grid>
-      </Container>
+      {/* </Container> */}
     </>
   );
 }

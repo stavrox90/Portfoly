@@ -56,8 +56,14 @@ const aboutObj = [
 const useStyles = makeStyles((theme) => ({
   root: {
     width: "100%",
-    maxWidth: 360,
+    [theme.breakpoints.down('sm')]: {
+      maxWidth: 360,
+    },
+    [theme.breakpoints.up('md')]: {
+      maxWidth: 600,
+    },
     margin: "auto",
+    marginTop: theme.spacing(1),
     backgroundColor: theme.palette.background.paper,
   },
   inline: {
@@ -70,6 +76,33 @@ const useStyles = makeStyles((theme) => ({
 
 export default function AboutMeCard() {
   const classes = useStyles();
+
+  const renderList = (about, id) => {
+    return (
+      <div key={id}>
+        <ListItem alignItems="flex-start">
+          <ListItemAvatar>
+            <Avatar src={about.author.avatar} alt={about.author.name} />
+          </ListItemAvatar>
+          <ListItemText
+            primary={about.header}
+            secondary={
+              <Typography
+                component="span"
+                variant="body2"
+                className={classes.inline}
+                color="textSecondary"
+              >
+                {about.text}
+              </Typography>
+            }
+          />
+        </ListItem>
+        <Divider variant="inset" component="li" />
+      </div>
+    );
+  };
+
   return (
     <>
       <List
@@ -84,39 +117,8 @@ export default function AboutMeCard() {
       >
         <Divider variant="middle" component="li" />
 
-        {aboutObj.map((about) => (
-          <>
-            <ListItem alignItems="flex-start">
-              <ListItemAvatar>
-                <Avatar src={about.author.avatar} alt={about.author.name} />
-              </ListItemAvatar>
-
-              <ListItemText
-                primary={about.header}
-                secondary={
-                  <Typography
-                    component="span"
-                    variant="body2"
-                    className={classes.inline}
-                    color="textSecondary"
-                  >
-                    {about.text}
-                  </Typography>
-                }
-              />
-            </ListItem>
-            <Divider variant="inset" component="li" />
-          </>
-        ))}
+        {aboutObj.map((about, id) => renderList(about, id))}
       </List>
     </>
   );
 }
-
-// const test = () => {(
-//     <ListItemIcon>
-//     <Avatar>{about.avatar || "S"}</Avatar>
-//   </ListItemIcon>
-
-//   <ListItemText primary={about.author.name} secondary={about.text} />
-// )}

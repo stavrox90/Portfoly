@@ -4,15 +4,17 @@ import NoteCard from "../components/cards/NoteCard";
 import ContactCard from "../components/cards/ContactCard";
 import ProfileCard from "../components/cards/ProfileCard";
 import AboutMeCard from "../components/cards/AboutMeCard"
+import SkillCard from "../components/cards/SkillCard";
 
 export default function HomePage({ children }) {
   return (
     <>
     {/* <Container> */}
-      {/* <ProfileCard /> */}
-      {/* <ContactCard /> */}
-      {/* <NoteCard /> */}
+      <ProfileCard />
+      <SkillCard />
+      <NoteCard />
       <AboutMeCard />
+      <ContactCard />
       {children}
       {/* </Container> */}
     </>

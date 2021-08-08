@@ -25,7 +25,16 @@ const profile = {
 const useStyle = makeStyles((theme) => {
   return {
     root: {
-      maxWidth: 345,
+      width: "100%",
+      [theme.breakpoints.down('sm')]: {
+        maxWidth: 360,
+      },
+      [theme.breakpoints.up('md')]: {
+        maxWidth: 600,
+      },
+      margin: "auto",
+      marginTop: theme.spacing(1),
+      backgroundColor: theme.palette.background.paper,
     },
     media: {
       height: 0,

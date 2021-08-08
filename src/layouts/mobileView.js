@@ -14,7 +14,9 @@ import { useHistory } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => {
   return {
-    root: {},
+    page: {
+      marginBottom: theme.spacing(8)
+    },
     appBar: {},
     btmAppBar: {
       top: "auto",
@@ -78,10 +80,13 @@ function RenderBottomBar() {
 }
 
 export default function MobileView({ children }) {
+  const classes = useStyles();
   return (
     <>
       <RenderTopBar />
-        {children}
+        <div className={classes.page}>
+          {children}
+        </div>
       <RenderBottomBar />
     </>
   );
