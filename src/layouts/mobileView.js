@@ -14,9 +14,9 @@ import { useHistory } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => {
   return {
-    page: {
-      marginBottom: theme.spacing(8)
-    },
+    // page: {
+    //   marginBottom: theme.spacing(8)
+    // },
     appBar: {},
     btmAppBar: {
       top: "auto",

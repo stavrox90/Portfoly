@@ -5,6 +5,9 @@ import {
   Grid,
   Paper,
   Card,
+  List,
+  ListSubheader,
+  Divider,
   CardHeader,
   CardContent,
   Typography,
@@ -48,12 +51,15 @@ const useStyles = makeStyles((theme) => ({
     margin: "auto",
     backgroundColor: theme.palette.background.paper,
   },
+  subHeader: {
+    width: "100%",
+  },
   gridContainer: {
     width: "100%",
     margin: 0,
   },
   card: {
-    marginTop: theme.spacing(1)
+    marginTop: theme.spacing(1),
   },
   button: {
     "&:hover": {
@@ -82,35 +88,44 @@ export default function NoteCard() {
 
   return (
     <>
-      {/* <Container> */}
-      {/* <Container className={classes.root}> */}
-        <Grid className={classes.root}>
-          <Card className={classes.card}>
-          {notes.map((note, id) => (
-            <>
-              <CardHeader
-                key={id}
-                action={
-                  <IconButton
-                    // onClick={() => handleDelete(id)}
-                    className={classes.button}
+      <Grid container className={classes.root}>
+        <ListSubheader component="div" className={classes.subHeader}>
+          Notes
+        </ListSubheader>
+          {/* <Divider variant="middle" component="h5" /> */}
+        <Grid item>
+          <Card className={classes.card} elevation={0}>
+            {notes.map((note, id) => (
+              <>
+                <Divider variant="middle" component="h5" />
+                <CardHeader
+                  key={id}
+                  action={
+                    <IconButton
+                      onClick={() => handleDelete(id)}
+                      className={classes.button}
+                    >
+                      <DeleteOutlined />
+                    </IconButton>
+                  }
+                  title={note.title}
+                  subheader={note.category}
+                />
+                <CardContent>
+                  <Typography
+                    variant="body2"
+                    gutterBottom
+                    color="textSecondary"
+                    component="p"
                   >
-                    <DeleteOutlined />
-                  </IconButton>
-                }
-                title={note.title}
-                subheader={note.category}
-              />
-              <CardContent>
-                <Typography variant="body2" color="textSecondary" component="p">
-                  {note.details}
-                </Typography>
-              </CardContent>
-            </>
-          ))}
+                    {note.details}
+                  </Typography>
+                </CardContent>
+              </>
+            ))}
           </Card>
         </Grid>
-      {/* </Container> */}
+      </Grid>
     </>
   );
 }

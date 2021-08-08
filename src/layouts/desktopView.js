@@ -19,9 +19,9 @@ import { useHistory } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => {
   return {
-    page: {
-      marginBottom: theme.spacing(8),
-    },
+    // page: {
+    //   marginBottom: theme.spacing(8),
+    // },
     appBar: {},
     btmAppBar: {
       top: "auto",
@@ -94,7 +94,9 @@ export default function DesktopView({ children }) {
     <>
       <RenderTopBar />
       {/* <div className={classes.offset}/> */}
+
       <div className={classes.page}>{children}</div>
+
       {/* TODO: navigation for desktop view */}
       {/* <RenderBottomBar /> */}
     </>

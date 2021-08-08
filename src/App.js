@@ -1,5 +1,5 @@
-import { Container, createTheme, ThemeProvider } from "@material-ui/core";
-import { blue, lightBlue, purple, teal } from "@material-ui/core/colors";
+import { Paper, createTheme, ThemeProvider } from "@material-ui/core";
+import { blue, blueGrey, lightBlue, purple, teal } from "@material-ui/core/colors";
 import React, { useEffect, useState } from "react";
 import {
   BrowserRouter as Router,
@@ -15,8 +15,9 @@ import { Home, About, Projects, Contacts, Lost } from "./pages";
 const theme = createTheme({
   // palette: {},
   palette: {
-    primary: blue,
-    secondary: purple,
+    // type: "dark",
+    primary: blueGrey,
+    secondary: blue,
   },
   typography: {
     fontFamily: [
@@ -61,7 +62,7 @@ function App() {
   // })
   // .then(res => res.json())
   // .then(data => console.log(data))
-  
+
   // useEffect(() => {
   //   fetch('http://localhost:8000/contacts')
   //   .then(res => res.json())
@@ -69,19 +70,21 @@ function App() {
   // }, [])
 
   return (
-    <ThemeProvider theme={theme}>
-      <Router>
-        <Layout>
-          <Switch>
-            <Route exact path="/" component={Home} />
-            <Route path="/about" component={About} />
-            <Route path="/projects" component={Projects} />
-            <Route path="/contacts" component={Contacts} />
-            <Route to="*" component={Lost} />
-          </Switch>
-        </Layout>
-      </Router>
-    </ThemeProvider>
+    <Router>
+      <ThemeProvider theme={theme}>
+        <Paper square>
+          <Layout>
+            <Switch>
+              <Route exact path="/" component={Home} />
+              <Route path="/about" component={About} />
+              <Route path="/projects" component={Projects} />
+              <Route path="/contacts" component={Contacts} />
+              <Route to="*" component={Lost} />
+            </Switch>
+          </Layout>
+          </Paper>
+      </ThemeProvider>
+    </Router>
   );
 }
 
