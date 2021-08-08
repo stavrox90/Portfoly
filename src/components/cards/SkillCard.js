@@ -61,7 +61,6 @@ export default function SkillCard() {
   const theme = useTheme();
   const matches = useMediaQuery(theme.breakpoints.down('md'));
 
-  console.info(matches)
   return (
     <>
     {/* <Card className={classes.root}> */}

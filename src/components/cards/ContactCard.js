@@ -64,19 +64,19 @@ const contactList = [
 const useStyles = makeStyles((theme) => ({
   root: {
     width: "100%",
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.down("sm")]: {
       maxWidth: 360,
     },
-    [theme.breakpoints.up('md')]: {
+    [theme.breakpoints.up("md")]: {
       maxWidth: 600,
     },
     margin: "auto",
     marginTop: theme.spacing(1),
     backgroundColor: theme.palette.background.paper,
   },
-//   nested: {
-//     paddingLeft: theme.spacing(4),
-//   },
+  //   nested: {
+  //     paddingLeft: theme.spacing(4),
+  //   },
 }));
 
 export default function ContactCard() {
@@ -97,7 +97,7 @@ export default function ContactCard() {
         <Divider variant="middle" component="li" />
         {contactList.map((contact) => (
           <>
-            <ListItem button>
+            <ListItem button onClick={() => window.open(contact.url, "_blank")}>
               <ListItemIcon>
                 <Avatar>{contact.icon || "S"}</Avatar>
               </ListItemIcon>
