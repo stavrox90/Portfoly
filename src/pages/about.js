@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
+import AboutMeCard from '../components/cards/AboutMeCard'
 
 export default function AboutPage({ children }) {
     return (
         <>
-            <h1>AboutPage</h1>
+            <AboutMeCard />
             {children}
         </>
     )
