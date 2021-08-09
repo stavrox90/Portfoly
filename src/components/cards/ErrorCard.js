@@ -1,35 +1,16 @@
 import React from "react";
 import {
   makeStyles,
-  Chip,
   Card,
-  List,
-  Paper,
-  ListItem,
-  Container,
   Box,
-  Hidden,
   useTheme,
   useMediaQuery,
   Typography,
-  Avatar,
   CardMedia,
-  CardContent,
   Divider,
 } from "@material-ui/core";
-import { FaceOutlined, TagFacesRounded } from "@material-ui/icons";
 import logo from "../images/logo.jpg";
 import { loremText } from "../contents/details";
-
-const skills = [
-  "Observation",
-  "Problem Solving",
-  "Critical Thinking",
-  "Patience",
-  "Listening",
-  "Fast Learner",
-  "Creativity",
-];
 
 const useStyles = makeStyles((theme) => ({
   root: {

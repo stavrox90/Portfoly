@@ -1,11 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import {
   makeStyles,
-  Container,
   Grid,
-  Paper,
   Card,
-  List,
   ListSubheader,
   Divider,
   CardHeader,
@@ -80,11 +77,11 @@ export default function NoteCard() {
   };
 
   // TODO: undo delete feature
-  const undoDelete = () => {
-    // if (notes.length > 0) {
-    //   setNotes(notes.filter((card, index) => index !== id));
-    // }
-  };
+  // const undoDelete = () => {
+  //   if (notes.length > 0) {
+  //     setNotes(notes.filter((card, index) => index !== id));
+  //   }
+  // };
 
   return (
     <>

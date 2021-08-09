@@ -1,19 +1,18 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import {
   ListSubheader,
   List,
   ListItem,
   ListItemIcon,
   ListItemText,
-  ListItemAvatar,
   Avatar,
   Divider,
 } from "@material-ui/core";
 import {
-  Cloud,
   EmailRounded,
   GitHub,
   LinkedIn,
+  Cloud,
   Twitter,
 } from "@material-ui/icons";
 import { makeStyles } from "@material-ui/core";
@@ -74,9 +73,6 @@ const useStyles = makeStyles((theme) => ({
     marginTop: theme.spacing(1),
     backgroundColor: theme.palette.background.paper,
   },
-  //   nested: {
-  //     paddingLeft: theme.spacing(4),
-  //   },
 }));
 
 export default function ContactCard() {

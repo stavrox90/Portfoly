@@ -1,20 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import {
   AppBar,
   makeStyles,
   Toolbar,
   Typography,
   Avatar,
-  Grid,
-  BottomNavigation,
-  BottomNavigationAction,
 } from "@material-ui/core";
-import {
-  HomeRounded,
-  PermIdentityRounded,
-  ListAltRounded,
-  ContactsRounded,
-} from "@material-ui/icons";
 import avatar from "../components/images/avatar.jpg";
 import { useHistory } from "react-router-dom";
 
@@ -55,6 +46,7 @@ function RenderTopBar() {
   );
 }
 
+{/* TODO: navigation for desktop view */}
 function RenderBottomBar() {
   // const classes = useStyles();
   // const history = useHistory();
@@ -91,9 +83,6 @@ export default function DesktopView({ children }) {
     <>
       <RenderTopBar />
       {children}
-
-      {/* TODO: navigation for desktop view */}
-      {/* <RenderBottomBar /> */}
     </>
   );
 }

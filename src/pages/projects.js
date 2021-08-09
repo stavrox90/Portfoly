@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from "react";
-import { Container, Grid, Paper, Typography } from "@material-ui/core";
+import React from "react";
 import ProjectCard from "../components/cards/ProjectCard";
 
 export default function ProjectPage({ children }) {
