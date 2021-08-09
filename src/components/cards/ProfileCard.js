@@ -6,6 +6,7 @@ import {
   Avatar,
   CardContent,
   Typography,
+  ListSubheader,
 } from "@material-ui/core";
 import { red } from "@material-ui/core/colors";
 
@@ -26,14 +27,18 @@ const useStyle = makeStyles((theme) => {
   return {
     root: {
       width: "100%",
-      [theme.breakpoints.down('sm')]: {
+      [theme.breakpoints.down("sm")]: {
         maxWidth: 360,
       },
-      [theme.breakpoints.up('md')]: {
+      [theme.breakpoints.up("md")]: {
         maxWidth: 600,
       },
       margin: "auto",
       marginTop: theme.spacing(1),
+      backgroundColor: theme.palette.background.paper,
+    },
+    subHeader: {
+      width: "100%",
       backgroundColor: theme.palette.background.paper,
     },
     media: {
@@ -60,23 +65,28 @@ const useStyle = makeStyles((theme) => {
 export default function ProfileCard() {
   const classes = useStyle();
   return (
-    <Card className={classes.root}>
-      <CardHeader
-        avatar={
-          <Avatar
-            src={profile.avatar}
-            aria-label={profile.name}
-            className={classes.avatar}
-          />
-        }
-        title={profile.name}
-        subheader={profile.designation}
-      />
-      <CardContent>
-        <Typography variant="body2" color="textSecondary" component="p">
-          {profile.text}
-        </Typography>
-      </CardContent>
-    </Card>
+    <>
+      {/* <ListSubheader component="div" className={classes.subHeader}>
+        Profile
+      </ListSubheader> */}
+      <Card className={classes.root}>
+        <CardHeader
+          avatar={
+            <Avatar
+              src={profile.avatar}
+              aria-label={profile.name}
+              className={classes.avatar}
+            />
+          }
+          title={profile.name}
+          subheader={profile.designation}
+        />
+        <CardContent>
+          <Typography variant="body2" color="textSecondary" component="p">
+            {profile.text}
+          </Typography>
+        </CardContent>
+      </Card>
+    </>
   );
 }

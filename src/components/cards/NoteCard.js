@@ -90,7 +90,7 @@ export default function NoteCard() {
     <>
       <Grid container className={classes.root}>
         <ListSubheader component="div" className={classes.subHeader}>
-          Notes
+          {notes.length !== 0? 'Notes': 'No more notes :('}
         </ListSubheader>
           {/* <Divider variant="middle" component="h5" /> */}
         <Grid item>

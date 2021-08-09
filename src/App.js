@@ -1,5 +1,11 @@
 import { Paper, createTheme, ThemeProvider } from "@material-ui/core";
-import { blue, blueGrey, lightBlue, purple, teal } from "@material-ui/core/colors";
+import {
+  blue,
+  blueGrey,
+  lightBlue,
+  purple,
+  teal,
+} from "@material-ui/core/colors";
 import React, { useEffect, useState } from "react";
 import {
   BrowserRouter as Router,
@@ -72,17 +78,15 @@ function App() {
   return (
     <Router>
       <ThemeProvider theme={theme}>
-        <Paper square>
-          <Layout>
-            <Switch>
-              <Route exact path="/" component={Home} />
-              <Route path="/about" component={About} />
-              <Route path="/projects" component={Projects} />
-              <Route path="/contacts" component={Contacts} />
-              <Route to="*" component={Lost} />
-            </Switch>
-          </Layout>
-          </Paper>
+        <Layout>
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route path="/about" component={About} />
+            <Route path="/projects" component={Projects} />
+            <Route path="/contacts" component={Contacts} />
+            <Route to="*" component={Lost} />
+          </Switch>
+        </Layout>
       </ThemeProvider>
     </Router>
   );

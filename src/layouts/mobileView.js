@@ -17,7 +17,8 @@ const useStyles = makeStyles((theme) => {
     // page: {
     //   marginBottom: theme.spacing(8)
     // },
-    appBar: {},
+    toolbar: theme.mixins.toolbar,
+    // appBar: {},
     btmAppBar: {
       top: "auto",
       bottom: 0,
@@ -54,7 +55,7 @@ function RenderBottomBar() {
   const classes = useStyles();
   const history = useHistory();
   const [value, setValue] = useState("home");
-  
+
   return (
     <>
       <AppBar elevation={0} position="fixed" className={classes.btmAppBar}>
@@ -71,8 +72,7 @@ function RenderBottomBar() {
               icon={menu.icon}
               onClick={() => history.push(menu.path)}
             />
-          )
-          )}
+          ))}
         </BottomNavigation>
       </AppBar>
     </>
@@ -84,9 +84,7 @@ export default function MobileView({ children }) {
   return (
     <>
       <RenderTopBar />
-        <div className={classes.page}>
-          {children}
-        </div>
+      {children}
       <RenderBottomBar />
     </>
   );

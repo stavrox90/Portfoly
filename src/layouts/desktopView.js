@@ -5,6 +5,7 @@ import {
   Toolbar,
   Typography,
   Avatar,
+  Grid,
   BottomNavigation,
   BottomNavigationAction,
 } from "@material-ui/core";
@@ -93,9 +94,7 @@ export default function DesktopView({ children }) {
   return (
     <>
       <RenderTopBar />
-      {/* <div className={classes.offset}/> */}
-
-      <div className={classes.page}>{children}</div>
+      {children}
 
       {/* TODO: navigation for desktop view */}
       {/* <RenderBottomBar /> */}
