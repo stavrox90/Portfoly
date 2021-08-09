@@ -11,6 +11,7 @@ import ContactCard from "../components/cards/ContactCard";
 import ProfileCard from "../components/cards/ProfileCard";
 import AboutMeCard from "../components/cards/AboutMeCard";
 import SkillCard from "../components/cards/SkillCard";
+import ProjectCard from "../components/cards/ProjectCard";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -32,19 +33,21 @@ export default function HomePage({ children }) {
     <>
       <Container>
         <Grid container spacing={3}>
-          <Grid item xs={12} sm={12} md={6}>
+          <Grid item xs={12} sm={12} md={8}>
             <ProfileCard />
             <SkillCard />
-            <ContactCard />
-          </Grid>
-          <Grid item xs={12} sm={12} md={6}>
             <AboutMeCard />
+            <ProjectCard />
           </Grid>
-          <Grid item xs={12} sm={12} md={6}>
+          <Grid item xs={12} sm={12} md={4}>
+            <ContactCard />
             <NoteCard />
           </Grid>
-          <Grid item xs={12} sm={12} md={6}>
-            <NoteCard />
+          <Grid item xs={12} sm={12} md={8}>
+            {/* <ProjectCard /> */}
+          </Grid>
+          <Grid item xs={12} sm={12} md={4}>
+            {/* <NoteCard /> */}
           </Grid>
           <Grid item xs={12}>
             {children}
