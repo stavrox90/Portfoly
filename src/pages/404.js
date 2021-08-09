@@ -1,4 +1,6 @@
-import React, { useState } from 'react'
+import React, { useState } from "react";
+import { Paper, Typography } from "@material-ui/core";
+import ErrorCard from "../components/cards/ErrorCard";
 
 // const [data, setData] = useState({});
 // const [loading, setLoading] =useState(true)
@@ -22,11 +24,13 @@ import React, { useState } from 'react'
 
 // if (loading) {return <h1>loading...</h1>}
 
+// TODO: Error handling page
+
 export default function ErrorPage({ children }) {
-    return (
-        <>
-            <h1>ErrorPage</h1>
-            {children}
-        </>
-    )
+  return (
+    <>
+      <ErrorCard />
+      {children}
+    </>
+  );
 }

@@ -7,8 +7,10 @@ import {
   CardContent,
   Typography,
   ListSubheader,
+  Divider,
+  Hidden,
+  List,
 } from "@material-ui/core";
-import { red } from "@material-ui/core/colors";
 
 import avatar from "../images/avatar.jpg";
 
@@ -23,70 +25,85 @@ const profile = {
     tasks given.`,
 };
 
-const useStyle = makeStyles((theme) => {
-  return {
-    root: {
-      width: "100%",
-      [theme.breakpoints.down("sm")]: {
-        maxWidth: 360,
-      },
-      [theme.breakpoints.up("md")]: {
-        maxWidth: 600,
-      },
-      margin: "auto",
-      marginTop: theme.spacing(1),
-      backgroundColor: theme.palette.background.paper,
+const useStyles = makeStyles((theme) => ({
+  root: {
+    width: "100%",
+    [theme.breakpoints.down("sm")]: {
+      maxWidth: 360,
     },
-    subHeader: {
-      width: "100%",
-      backgroundColor: theme.palette.background.paper,
+    [theme.breakpoints.up("md")]: {
+      maxWidth: 600,
     },
-    media: {
-      height: 0,
-      paddingTop: "56.25%", // 16:9
+    margin: "auto",
+    marginTop: theme.spacing(1),
+    backgroundColor: theme.palette.background.paper,
+  },
+  list: {
+    width: "100%",
+    [theme.breakpoints.down("sm")]: {
+      maxWidth: 360,
     },
-    expand: {
-      transform: "rotate(0deg)",
-      marginLeft: "auto",
-      transition: theme.transitions.create("transform", {
-        duration: theme.transitions.duration.shortest,
-      }),
+    [theme.breakpoints.up("md")]: {
+      maxWidth: 600,
     },
-    expandOpen: {
-      transform: "rotate(180deg)",
-    },
-    avatar: {
-      //   backgroundColor: red[500],
-    },
-  };
-});
+    margin: "auto",
+    marginTop: theme.spacing(1),
+    backgroundColor: theme.palette.background.paper,
+  },
+  details: {
+    display: "flex",
+    flexDirection: "column",
+  },
+  content: {
+    flex: "1 0 auto",
+  },
+  cover: {
+    width: 151,
+  },
+}));
 
 // TODO: might implements ListItem as terminology
 export default function ProfileCard() {
-  const classes = useStyle();
+  const classes = useStyles();
   return (
     <>
-      {/* <ListSubheader component="div" className={classes.subHeader}>
-        Profile
-      </ListSubheader> */}
-      <Card className={classes.root}>
-        <CardHeader
-          avatar={
-            <Avatar
-              src={profile.avatar}
-              aria-label={profile.name}
-              className={classes.avatar}
-            />
-          }
-          title={profile.name}
-          subheader={profile.designation}
-        />
-        <CardContent>
-          <Typography variant="body2" color="textSecondary" component="p">
-            {profile.text}
-          </Typography>
-        </CardContent>
-      </Card>
+      {/* <Hidden smUp> */}
+      <List
+        className={classes.root}
+        component="nav"
+        aria-labelledby="nested-list-subheader"
+        subheader={
+          <ListSubheader component="div" className={classes.subHeader}>
+            Profile
+          </ListSubheader>
+        }
+      >
+        <Divider variant="middle" component="li" />
+
+        <Card className={classes.root}>
+          <CardHeader
+            avatar={
+              <Avatar
+                src={profile.avatar}
+                aria-label={profile.name}
+                className={classes.avatar}
+              />
+            }
+            title={
+              <Typography variant="span" color="textSecondary" component="h5">
+                {profile.name}
+              </Typography>
+            }
+            subheader={profile.designation}
+          />
+          <CardContent>
+            <Typography variant="body2" color="textSecondary" component="p">
+              {profile.text}
+            </Typography>
+          </CardContent>
+        </Card>
+      </List>
+      {/* </Hidden> */}
     </>
   );
 }

@@ -7,14 +7,14 @@ export default function Layout({ children }) {
   return (
     <>
       <Hidden smUp>
-        <Paper square>
+        {/* <Paper square> */}
           <MobileView>{children}</MobileView>
-        </Paper>
+        {/* </Paper> */}
       </Hidden>
       <Hidden xsDown>
-        <Paper square>
+        {/* <Paper square> */}
           <DesktopView>{children}</DesktopView>
-        </Paper>
+        {/* </Paper> */}
       </Hidden>
     </>
   );

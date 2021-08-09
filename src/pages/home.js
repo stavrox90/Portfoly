@@ -1,11 +1,5 @@
-import React, { useState, useEffect } from "react";
-import {
-  makeStyles,
-  Container,
-  Grid,
-  Paper,
-  Typography,
-} from "@material-ui/core";
+import React from "react";
+import { makeStyles, Container, Grid, Hidden } from "@material-ui/core";
 import NoteCard from "../components/cards/NoteCard";
 import ContactCard from "../components/cards/ContactCard";
 import ProfileCard from "../components/cards/ProfileCard";
@@ -31,28 +25,34 @@ export default function HomePage({ children }) {
   const classes = useStyles();
   return (
     <>
+      <Hidden smUp>
+        <ProfileCard />
+        <SkillCard />
+      </Hidden>
       <Container>
-        <Grid container spacing={3}>
-          <Grid item xs={12} sm={12} md={8}>
-            <ProfileCard />
-            <SkillCard />
-            <AboutMeCard />
-            <ProjectCard />
+        <Hidden xsDown>
+          <Grid container>
+            <Grid item xs={12} sm={12} md={6}>
+              <ProfileCard />
+              <SkillCard />
+              <AboutMeCard />
+              <ProjectCard />
+            </Grid>
+            <Grid item xs={12} sm={12} md={6}>
+              <ContactCard />
+              <NoteCard />
+            </Grid>
+            <Grid item xs={12} sm={12} md={8}>
+              {/* <ProjectCard /> */}
+            </Grid>
+            <Grid item xs={12} sm={12} md={4}>
+              {/* <NoteCard /> */}
+            </Grid>
+            <Grid item xs={12}>
+              {children}
+            </Grid>
           </Grid>
-          <Grid item xs={12} sm={12} md={4}>
-            <ContactCard />
-            <NoteCard />
-          </Grid>
-          <Grid item xs={12} sm={12} md={8}>
-            {/* <ProjectCard /> */}
-          </Grid>
-          <Grid item xs={12} sm={12} md={4}>
-            {/* <NoteCard /> */}
-          </Grid>
-          <Grid item xs={12}>
-            {children}
-          </Grid>
-        </Grid>
+        </Hidden>
       </Container>
     </>
   );

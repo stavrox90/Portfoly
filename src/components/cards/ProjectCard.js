@@ -1,21 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import {
   makeStyles,
-  Container,
-  Grid,
-  Paper,
   Card,
   List,
   ListSubheader,
   Divider,
   CardHeader,
-  CardContent,
-  Typography,
-  IconButton,
   CardMedia,
-  Avatar,
 } from "@material-ui/core";
-import { DeleteOutlined } from "@material-ui/icons";
 import { works } from "../contents/details";
 
 const useStyles = makeStyles((theme) => ({

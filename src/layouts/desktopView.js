@@ -20,9 +20,6 @@ import { useHistory } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => {
   return {
-    // page: {
-    //   marginBottom: theme.spacing(8),
-    // },
     appBar: {},
     btmAppBar: {
       top: "auto",
@@ -44,7 +41,6 @@ const useStyles = makeStyles((theme) => {
 function RenderTopBar() {
   const classes = useStyles();
   const history = useHistory();
-  const [value, setValue] = useState("home");
 
   return (
     <>

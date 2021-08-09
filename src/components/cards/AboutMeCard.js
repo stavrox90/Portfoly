@@ -6,10 +6,10 @@ import {
   List,
   ListSubheader,
   ListItem,
-  ListItemIcon,
   ListItemText,
   ListItemAvatar,
   Typography,
+  Hidden,
 } from "@material-ui/core";
 
 import avatar from "../images/avatar.jpg";
@@ -56,10 +56,10 @@ const aboutObj = [
 const useStyles = makeStyles((theme) => ({
   root: {
     width: "100%",
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.down("sm")]: {
       maxWidth: 360,
     },
-    [theme.breakpoints.up('md')]: {
+    [theme.breakpoints.up("md")]: {
       maxWidth: 600,
     },
     margin: "auto",
@@ -69,9 +69,7 @@ const useStyles = makeStyles((theme) => ({
   inline: {
     display: "inline",
   },
-  //   nested: {
-  //     paddingLeft: theme.spacing(4),
-  //   },
+  spacer: theme.mixins.toolbar,
 }));
 
 export default function AboutMeCard() {
@@ -119,6 +117,9 @@ export default function AboutMeCard() {
 
         {aboutObj.map((about, id) => renderList(about, id))}
       </List>
+      <Hidden smUp>
+        <div className={classes.spacer} />
+      </Hidden>
     </>
   );
 }

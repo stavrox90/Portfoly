@@ -14,9 +14,6 @@ import { useHistory } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => {
   return {
-    // page: {
-    //   marginBottom: theme.spacing(8)
-    // },
     toolbar: theme.mixins.toolbar,
     // appBar: {},
     btmAppBar: {
@@ -58,7 +55,7 @@ function RenderBottomBar() {
 
   return (
     <>
-      <AppBar elevation={0} position="fixed" className={classes.btmAppBar}>
+      <AppBar position="fixed" className={classes.btmAppBar}>
         <BottomNavigation
           value={value}
           onChange={(e, newValue) => setValue(newValue)}
